@@ -20,19 +20,17 @@ function randomPlay() {
 ////////////////////////////////////////////////
 /*           Write Your Code Below            */
 ////////////////////////////////////////////////
-
+var player_moved;
 function getPlayerMove(move) {
-    // Write an expression that operates on a variable called `move`
-    // If a `move` has a value, your expression should evaluate to that value.
-    // However, if `move` is not specified / is null, your expression should equal `getInput()`.
-    return /* Your Expression */;
+    if (move == "rock" || "paper"|| "scissors"){player_moved = true}
+    else if ((!move) || (move==="")){player_moved=getInput();}
+    return player_moved;
 }
-
+var computer_moved;
 function getComputerMove(move) {
-    // Write an expression that operates on a variable called `move`
-    // If a `move` has a value, your expression should evaluate to that value.
-    // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-    return /* Your Expression */;
+    if (move == "rock" || "paper" || "scissors"){computer_moved = true}
+    else if ((!move) || (move==="")){computer_moved=randomPlay();}
+    return computer_moved;
 }
 
 function getWinner(playerMove,computerMove) {
