@@ -17,20 +17,17 @@ function randomPlay() {
         return "scissors";
     }
 }
-////////////////////////////////////////////////
-/*           Write Your Code Below            */
-////////////////////////////////////////////////
-var player_moved;
+
+
 function getPlayerMove(move) {
-    if (move == "rock" || "paper"|| "scissors"){player_moved = true}
-    else if ((!move) || (move==="")){player_moved=getInput();}
-    return player_moved;
+    move = move || getInput();
+    return PlayerMove;
 }
-var computer_moved;
+
 function getComputerMove(move) {
-    if (move == "rock" || "paper" || "scissors"){computer_moved = true}
-    else if ((!move) || (move==="")){computer_moved=randomPlay();}
-    return computer_moved;
+    move = move || randomPlay();
+    return ComputerMove;
+    
 }
 
 function getWinner(playerMove,computerMove) {
