@@ -20,13 +20,13 @@ function randomPlay() {
 
 
 function getPlayerMove(move) {
-    move = move || getInput();
-    return PlayerMove;
+    return move = move || getInput();
+    
 }
 
 function getComputerMove(move) {
-    move = move || randomPlay();
-    return ComputerMove;
+   return move = move || randomPlay();
+    
     
 }
 
