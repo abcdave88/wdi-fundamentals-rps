@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////
 /*   Provided Code - Please Don't Edit   */
 ////////////////////////////////////////////////
-'use strict';
+//'use strict';
 
 function getInput() {
-    console.log("Please choose either 'rock', 'paper', or 'scissors'.")
+    console.log("Please choose either 'rock', 'paper', or 'scissors'.");
     return prompt();
 }
 function randomPlay() {
@@ -29,39 +29,51 @@ function getComputerMove(move) {
     
     
 }
-
+ 
 function getWinner(playerMove,computerMove) {
     var winner;
     
-    if (playerMove === computerMove){
+    if (playerMove == computerMove){
         winner = "Tie";
     }
     else if (playerMove === "rock"){
-        if (computerMove === "scissors") {winner = "Player";}
-        else {winner = "Computer";}
+        if (computerMove === "scissors") {winner = "player";}
+        else {winner = "computer";}
     }
     
     else if (playerMove === "scissors"){
-        if (computerMove === "paper") {winner = "Player";}
-        else winner = {"Computer";}
+        if (computerMove === "paper") {winner = "player";}
+        else {winner = "computer";}
     }
     
     else if (playerMove === "paper"){
-        if (computerMove === "rock") {winner = "Player";}
-        else winner = {"Computer";}
+        if (computerMove === "rock") {winner = "player";}
+        else {winner = "computer";}
     }
     return winner;
-}
-
-    
 }
 
 function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
-    // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
-    /* YOUR CODE HERE */
-    return [playerWins, computerWins];
+  
+    
+    while (playerWins < 5 && computerWins < 5) {
+    var playerMove = getPlayerMove();
+    var computerMove = getComputerMove();
+    var winner = getWinner(playerMove,computerMove) ;
+        
+        if (winner == "player") {
+            playerWins +=1;
+            
+        }
+        else if (winner == "computer") { 
+            computerWins +=1;
+            
+        }
+    
+            console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove);
+        console.log('The score is player ' + playerWins + ' computer ' + computerWins);
+    }
 }
-
